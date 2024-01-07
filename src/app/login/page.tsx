@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { ArrowLeft } from 'react-feather';
+import Swal from 'sweetalert2';
 
 const Login: React.FC = () => {
   const router = useRouter();
@@ -17,7 +18,16 @@ const Login: React.FC = () => {
   const handleVoltar = () => {
     router.back();
   };
-  
+
+  const mostrarConfirmacao = async () => {
+  Swal.fire("Confirmado!", "Login realizado com sucesso.", "success");
+  }
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    mostrarConfirmacao();
+  };
+
   return (
     <> 
   <Header />
@@ -28,7 +38,7 @@ const Login: React.FC = () => {
         <h2 className="text-4xl font-bold mb-4 text-gray">Login</h2>
         <hr className="my-6 border-2 border-gray" />
 
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="mb-4">
             <p className="mb-4 text-008C83 font-semibold">Bem-vindo de volta!</p>
             <label htmlFor="Email" className="block mb-1 font-semibold">
@@ -67,6 +77,7 @@ const Login: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
+              onClick={mostrarConfirmacao}
               className="w-40 bg-8F0000 text-white rounded py-2 hover:bg-008C83 transition duration-5000 rounded-full bg-7CF5D4"
             >
               {loading ? (

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { ArrowLeft } from 'react-feather';
+import Swal from 'sweetalert2';
 
 export default function Contato() {
   const router = useRouter();
@@ -17,6 +18,28 @@ export default function Contato() {
   const handleVoltar = () => {
     router.back();
   };
+
+  const mostrarConfirmacao = async () => {
+        const resultado = await Swal.fire({
+        title: "Você tem certeza?",
+        text: "Esta ação não pode ser desfeita!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sim, confirmar!",
+        cancelButtonText: "Cancelar",
+      });
+
+      // Verifica se o usuário confirmou
+      if (resultado.isConfirmed) {
+        // Código a ser executado se o usuário confirmar
+        Swal.fire("Confirmado!", "Mensagem enviada com sucesso.", "success");
+      } else {
+        // Código a ser executado se o usuário cancelar
+        Swal.fire("Cancelado", "A mensagem não foi enviada.", "info");
+      }
+    }
   
   return (
    <> 
@@ -75,6 +98,7 @@ export default function Contato() {
             <button
               type="submit"
               disabled={loading}
+              onClick={mostrarConfirmacao}
               className="w-40 bg-8F0000 text-white rounded py-2 hover:bg-008C83 transition duration-5000 rounded-full bg-7CF5D4"
             >
               {loading ? (
