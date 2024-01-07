@@ -11,15 +11,18 @@ const config: Config = {
       backgroundColor: {
         'EBDFD6': '#EBDFD6',
         '8F0000': '#8F0000',
+        'FF6E41': '#FF6E41',
       },
       borderColor: {
         'EBDFD6': '#EBDFD6',
         '8F0000': '#8F0000',
+        'FF6E41': '#FF6E41',
 
       },
       textColor: {
         'EBDFD6': '#EBDFD6',
         '8F0000': '#8F0000',
+        'FF6E41':'#FF6E41',
 
       },
       fontFamily: {

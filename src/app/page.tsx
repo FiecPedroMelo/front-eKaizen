@@ -7,18 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import eats2 from "@/components/images/eats2.jpeg"
 
-import image10 from "@/components/images/image 10.png";
-import image11 from "@/components/images/image 11.png";
-import image12 from "@/components/images/image 12.png";
-import image13 from "@/components/images/image 13.png";
-import image14 from "@/components/images/image 14.png";
-import image15 from "@/components/images/image 15.png";
-import image16 from "@/components/images/image 16.png";
-import image17 from "@/components/images/image 17.png";
-import image18 from "@/components/images/image 18.png";
-
-
-
 export default function Home() {
   return (
     <>
